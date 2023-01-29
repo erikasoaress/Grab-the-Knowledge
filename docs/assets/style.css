@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    background-color: lightblue;
+    
+  }
+  
+#game-intro{
+  display: block;
+}
+
+#game-board {
+    float: right;
+    padding: auto;
+  }
+  
+  #canvas {
+    background-image: url(/docs/assets/game.png);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
