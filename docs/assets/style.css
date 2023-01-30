@@ -1,17 +1,45 @@
 body {
     padding: 0;
     background-color: lightblue;
+    text-align: center;
     
   }
-  
-#game-intro{
-  display: block;
+
+.game-intro {
+    
+    display: flex;
+    flex-direction: column;
+    
 }
+
+h1 {
+   font-size: 40px;
+    text-align: center;
+    position: relative;
+}
+
+/*p {
+    width: 50%;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+body button {
+    font-size: 30px;
+    background-color: red;
+    color: #fff;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+} */
+
 
 #game-board {
     float: right;
     padding: auto;
-  }
+}
   
   #canvas {
     background-image: url(/docs/assets/game.png);
