@@ -14,11 +14,14 @@ playerImage2.src = "/docs/assets/player_position2.png"*/
 
 const startButton = document.getElementById("start-button");
 
-const player = new Component(canvas.width / 2, canvas.height / 2, 50, 120, ctx);
+const player = new Component(20, 500, 50, 120, ctx);
+const plane = new Plane(800, 15, 450, 350, ctx);
+
 
 startButton.onclick = function () {
   const game = new Game(ctx, 500, 700, player);
   game.start();
+
 };
 
 /*const game = new Game(ctx, 500, 700, player);
@@ -31,14 +34,9 @@ window.onload = () => {
 
 document.addEventListener("keydown", (e) => {
   switch (e.code) {
-    case "ArrowUp":
-      player.speedY -= 1
-      break;
-
-
     case "ArrowRight":
-      player.speedX += 1
-      break;
+    player.speedX += 1
+    break;
 
     case "ArrowLeft":
       player.speedX -= 1

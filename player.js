@@ -14,14 +14,17 @@ class Component {
         this.speedX = 0;
         this.speedY = 0;
         this.img = new Image ();
-        this.img = new Image ();
+        this.img5 = new Image ();
+      
         this.img.src = "/docs/assets/player_position1.png"; 
-        this.img.src = "/docs/assets/player_position2.png"
+        this.img5.src = "/docs/assets/Aviao_css.png";
+        
     }
 
     draw() {
 
-        this.ctx.drawImage(this.img, 100,650, 100, 100);
+        this.ctx.drawImage(this.img, this.x,this.y, 100, 60);
+        this.ctx.drawImage(this.img5,this.x,this.y, 100, 400);
         
         /* this.ctx.fillStyle = "rgba(0,0,0,0)";
         this.ctx.fillRect(this.x, this.y, this.w, this.h); */
@@ -48,12 +51,14 @@ class Component {
         return this.x + this.w;
     }
 
-    crashWith(enemy) {
+    
+    crashWith(float) {
         return !(
-            this.bottom() < enemy.top() || 
-            this.top() > enemy.bottom() || 
-            this.right() < enemy.left() ||
-            this.left() > enemy.right()
+            this.bottom() < float.top() || 
+            this.top() > float.bottom() || 
+            this.right() < float.left() ||
+            this.left() > float.right()
         );
     }
+
 }

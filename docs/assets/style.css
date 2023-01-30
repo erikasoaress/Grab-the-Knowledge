@@ -6,10 +6,21 @@ body {
   }
 
 .game-intro {
-    
+    width: 30vh;
+    float: left;
+    padding: 0% 10%;
+    flex: start;
+    display: block;
+    align-items: stretch;
+  
+}
+
+.game-intro p {
+    font-size: 18px;
+    font-family: "Verdana";
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    
+    align-items: stretch;
 }
 
 h1 {
@@ -43,7 +54,7 @@ body button {
   
   #canvas {
     background-image: url(/docs/assets/game.png);
-    background-position: cover;
+    background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
    
