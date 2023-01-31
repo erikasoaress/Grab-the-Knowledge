@@ -33,6 +33,7 @@ class Component {
     newPos() {
         this.x += this.speedX;
         this.y += this.speedY;
+        
     }
 
     top() {

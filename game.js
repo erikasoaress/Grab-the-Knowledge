@@ -13,9 +13,11 @@ class Game {
         this.htmlFloat = [];
         this.wrongFloat = [];
         this.plane = plane;
+        this.plane2 = plane2;
         this.score = 0;
         this.lifes = 5;
     }
+  
 
     start() {
         this.intervalId = setInterval(this.update, 1000/120);
@@ -35,10 +37,13 @@ class Game {
         this.updatePlane();
         this.checkGameOver();
         this.showScore ();
+        this.checkScoreCSS();
+        this.checkScoreHTML();
+        this.checkScoreJS();
         this.showLifes();
-        if (this.lifes <= 0) {
+        /* if (this.lifes <= 0) {
           this.stop();
-        }
+        } */
     }
 
     stop() {
@@ -50,24 +55,24 @@ class Game {
     }
   
     showLifes() {
-      this.ctx.font = '22px Jazz LET, fantasy';
-      this.ctx.fillStyle = 'red';
-      this.ctx.fillText(`❤️ ${this.lifes} `, 95, 42);
+      this.ctx.font = '28px Jazz LET, fantasy';
+      this.ctx.fillStyle = "red";
+      this.ctx.fillText(`❤️ ${this.lifes} `, 40, 42);
     }
 
     showScore() {
-      this.ctx.font = '22px Jazz LET, fantasy';
-      this.ctx.fillStyle = 'blue';
-      this.ctx.fillText(`❤️ ${this.score} `, 45, 42);
+      this.ctx.font = '28px Jazz LET, fantasy';
+      this.ctx.fillStyle = "red";
+      this.ctx.fillText(`🛟 ${this.score} `, 40, 75);
     }
-
+  
     updateCssFloat() {
         for (let i = 0; i < this.cssFloat.length; i++) {
-            this.cssFloat[i].y += 0.8;
+            this.cssFloat[i].y += 2;
             this.cssFloat[i].draw();
         }
 
-        if (this.frames > 1200 && this.frames % 1000 === 0) { 
+        if (this.frames % 850 === 0) { 
 
             this.cssFloat.push(new CssFloat(this.ctx));
         }
@@ -75,11 +80,11 @@ class Game {
 
     updateHtmlFloat() {
         for (let i = 0; i < this.htmlFloat.length; i++) {
-            this.htmlFloat[i].y += 0.5;
+            this.htmlFloat[i].y += 0.7;
             this.htmlFloat[i].draw();
         }
 
-        if (this.frames > 1300 && this.frames % 1200 === 0) { 
+        if (this.frames % 1000 === 0) { 
 
             this.htmlFloat.push(new HtmlFloat(this.ctx));
         }
@@ -87,11 +92,11 @@ class Game {
 
     updateJsFloat() {
         for (let i = 0; i < this.jsFloat.length; i++) {
-            this.jsFloat[i].y += 1.4;
+            this.jsFloat[i].y += 2.4;
             this.jsFloat[i].draw();
         }
 
-        if (this.frames > 1200 && this.frames % 900 === 0) { 
+        if (this.frames % 700 === 0) { 
 
             this.jsFloat.push(new JsFloat(this.ctx));
         }
@@ -103,7 +108,7 @@ class Game {
             this.wrongFloat[i].draw();
         }
 
-        if (this.frames > 1300 && this.frames % 400 === 0) { 
+        if (this.frames % 900 === 0) { 
 
             this.wrongFloat.push(new WrongFloat(this.ctx));
         }
@@ -123,20 +128,51 @@ class Game {
           this.lifes -= 1;
           console.log('-1 life');
         }
+      } if (this.lifes === 0) {
+        setTimeout(() => {
+          this.stop();
+        }, 2000)
+        this.cssFloat.splice();
+        this.jsFloat.splice();
+        this.htmlFloat.splice();
+        this.wrongFloat.splice();
+        this.plane2.draw();
+        this.plane2.x -= 3.2;
       }
     }
-      checkScore = () => {
+      checkScoreCSS = () => {
         for (let i = 0; i < this.cssFloat.length; i++) {
           if (this.player.crashWith(this.cssFloat[i])) {
-            //this.cssFloat.splice(i, 1);//
-            this.score += 1;
-            console.log('+1 life');
+           this.cssFloat.splice(i, 1);
+            this.score += 2;
+            console.log('+2 life');
           }
         }
       }
+        checkScoreHTML = () => {
+          for (let i = 0; i < this.htmlFloat.length; i++) {
+            if (this.player.crashWith(this.htmlFloat[i])) {
+              this.htmlFloat.splice(i, 1);
+              this.score += 1;
+              console.log('+3 life');
+
+            }
+          }
+        }
+
+        checkScoreJS = () => {
+          for (let i = 0; i < this.jsFloat.length; i++) {
+            if (this.player.crashWith(this.jsFloat[i])) {
+              this.jsFloat.splice(i, 1);
+              this.score += 3;
+              console.log('+3 life');
+      }
+     }
+   } 
+
     }
-      
-     class Plane {
+   
+    class Plane {
         constructor() {
             this.x = 800;
             this.y = 50;
@@ -147,14 +183,31 @@ class Game {
             
         }
         draw() {
-            this.img5.src = "docs/assets/Aviao_go.png"; 
+            this.img5.src = "docs/assets/Avião_go.png"; 
             this.ctx.drawImage(this.img5, this.x,this.y, this.w, this.h);
           }
     } 
+
+    class Plane2 {
+        constructor() {
+            this.x = 800;
+            this.y = 50;
+            this.w = 450;
+            this.h = 100;
+            this.ctx = ctx;
+            this.img6 = new Image();
+            
+        }
+        draw() {
+            this.img6.src = "docs/assets/Avião_gameover.png"; 
+            this.ctx.drawImage(this.img6, this.x,this.y, this.w, this.h);
+          }
+        }
+    
   
     class CssFloat {
         constructor(ctx) {
-        this.x =  Math.floor(Math.random() * 1000);
+        this.x =  Math.floor(Math.random() * 1200);
         this.y = 0;
         this.w = 90;
         this.h = 140;
@@ -299,7 +352,7 @@ class Game {
 
     
     
-    
+      
 
 
 

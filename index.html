@@ -6,29 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/docs/assets/style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <title>PROJECT 1</title>
 </head>
 
 <body>
-       <div class="game-intro">
-       <h1>Grab the Knowledge!</h1>
-        <p> A normal day in a not very normal school.
+    <div class="game-intro">
+        <div class = "grab">
+            <img class = "float" src="/docs/assets/playerandfloat.png"/>
+            <h1>GRAB THE KNOWLEDGE!</h1>
+        </div>
+            <p class="game-story"> A normal day in a not very normal school. </br>
 
-            The students are arriving, but there is one missing.
-            
-            Eleonor felt in the river, and now, there is only one thing that can save her, the floating knowledge!
-            
-            Help Eleonor to grab the right floats!</p>
+                The students are arriving, but there is one missing. Catarina felt in the river, and now, there is only one thing that can save her, the floating knowledge!
+                </br>
 
-        <button id="start-button">StartGame</button>
+                Help Catarina to grab the right floats!</p>
+       
+
+        <p class ="arrow">Use the left and right arrow to help Catarina to get a high score!</p>
+       <ul class="points">
+            <li>🛟HTML = 1 Point</li>
+            <li>🛟CSS  = 2 Points </li>
+            <li>🛟JS   = 3 Points </li>
+        </ul>
+
+        <p class="heart">Be careful, don't touch the wrong float or Catarina will lose 1❤️!</p>
+
+        <div class="button">
+           
+            <button id="start-button"> <span><img class ="button-img" src="/docs/assets/play.png"/></span></button>
+        </div>
+
     </div>
-
-
 
     <div id="game-board">
         <canvas id="canvas" width="1000" height="600"></canvas>
     </div>
+
 
     <script type="text/javascript" src="/player.js"></script>
     <script type="text/javascript" src="/game.js"></script>

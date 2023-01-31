@@ -1,33 +1,121 @@
-body {
-    padding: 0;
-    background-color: lightblue;
-    text-align: center;
-    
-  }
 
-.game-intro {
-    width: 30vh;
-    float: left;
-    padding: 0% 10%;
-    flex: start;
-    display: block;
-    align-items: stretch;
-  
+* {
+    margin:0;
+    text-align: center;
 }
 
-.game-intro p {
-    font-size: 18px;
-    font-family: "Verdana";
-    text-align: left;
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Changa';
+
+  }
+
+
+.game-intro {
+    margin:10px 0 0 20px;
+
+    width: 45vh;
+    height: 50vh;
+
+    flex-direction: column;
     display: flex;
-    align-items: stretch;
+    float: left;
+
+    border-radius: 5px;
+      
+}
+
+.game-intro h1 {
+    margin-top: 10px;
+    
+}
+
+.game-story {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    border:dotted red 2px;
+    border-radius: 20px;
+    font-size: 14px;
+    
 }
 
 h1 {
+    text-align: center;
+    height: 10vh;
+    justify-content: center;
+    padding: 30px;
+    line-height: 30px;
+    color:rgb(39, 39, 146);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+
+}
+
+
+.grab {
+flex-direction: row;
+display:flex;
+border:0;
+flex-flow: row;
+
+
+}
+.points {
+    list-style: none;
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border:dotted red 2px;
+    border-radius: 20px;
+    padding:10px;
+    display:flex;
+    font-size: 14px;
+   
+}
+.heart {
+    margin-top: 10px;
+    
+}
+
+.button {
+    justify-content: center;
+    display:flex;
+}
+
+.button-img {
+    width: 150px;
+    height: 100px;
+    object-fit: fill;
+  }  
+
+  .float {
+    width: 150px;
+    height: 120px;
+    object-fit: fill;
+  }
+
+#start-button {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: none;   
+}
+
+.arrow, .heart {
+    color: rgb(39, 39, 146);
+    font-weight: bold;
+}
+
+
+/* h1 {
    font-size: 40px;
     text-align: center;
     position: relative;
-}
+} */
 
 /*p {
     width: 50%;
@@ -49,7 +137,8 @@ body button {
 
 #game-board {
     float: right;
-    padding: auto;
+    padding: 10px;
+   
 }
   
   #canvas {
