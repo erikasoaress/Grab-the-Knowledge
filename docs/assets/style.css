@@ -4,11 +4,17 @@
     text-align: center;
 }
 
+#canvas {
+    background-image: url(/docs/assets/game.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body {
     background-color: lightblue;
     text-align: center;
-    font-family: 'Changa';
-
+    font-family: 'Changa','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
 
@@ -22,8 +28,7 @@ body {
     display: flex;
     float: left;
 
-    border-radius: 5px;
-      
+    border-radius: 5px;    
 }
 
 .game-intro h1 {
@@ -32,7 +37,7 @@ body {
 }
 
 .game-story {
-    margin-top: 5px;
+    margin-top: 2px;
     margin-bottom: 10px;
     padding: 10px;
 
@@ -83,12 +88,15 @@ flex-flow: row;
 .button {
     justify-content: center;
     display:flex;
+    
    
 }
 
 .button-img {
     width: 150px;
     height: 100px;
+    margin-bottom: 0px;
+    
     
   }  
 
@@ -96,6 +104,7 @@ flex-flow: row;
     width: 150px;
     height: 120px;
     object-fit: fill;
+    margin-bottom: 0;
   }
 
 #start-button {
@@ -105,11 +114,14 @@ flex-flow: row;
     background-color: transparent;
     border: transparent;   
     text-decoration: none;
+    outline: none;
+    margin-bottom: 0px;
 }
 
 .arrow, .heart {
     color: rgb(39, 39, 146);
     font-weight: bold;
+    line-height: 30px;
 }
 
 
@@ -143,10 +155,4 @@ body button {
    
 }
   
-  #canvas {
-    background-image: url(/docs/assets/game.png);
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-}
+  

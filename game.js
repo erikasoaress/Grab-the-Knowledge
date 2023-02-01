@@ -16,12 +16,18 @@ class Game {
         this.plane2 = plane2;
         this.score = 0;
         this.lifes = 5;
+        this.audio2 = new Audio("docs/assets/musicafundo.mp3")
+        this.audio = new Audio("docs/assets/helicopter-flyby-68121.mp3");
+        this.audio2.loop = true;
+        this.audio3 = new Audio("/docs/assets/Game over music.wav");
+    
     }
   
 
     start() {
-        this.intervalId = setInterval(this.update, 1000/120);
-        
+        this.intervalId = setInterval(this.update, 1000/120);   
+        this.audio2.play();     
+        this.audio2.volume = 0.1;
     }
 
     update = () => {
@@ -41,9 +47,10 @@ class Game {
         this.checkScoreHTML();
         this.checkScoreJS();
         this.showLifes();
-        /* if (this.lifes <= 0) {
-          this.stop();
-        } */
+        
+       /*  /if (this.lifes <= 0) {
+          this.audio.stop();
+        }  */
     }
 
     stop() {
@@ -57,22 +64,23 @@ class Game {
     showLifes() {
       this.ctx.font = '28px Jazz LET, fantasy';
       this.ctx.fillStyle = "red";
-      this.ctx.fillText(`❤️ ${this.lifes} `, 40, 42);
+    //  this.ctx.fillText(`❤️ ${this.lifes} `, 40, 42);
+    this.ctx.fillText(`❤️ ${this.lifes} `, 920, 42);
     }
 
     showScore() {
       this.ctx.font = '28px Jazz LET, fantasy';
       this.ctx.fillStyle = "red";
-      this.ctx.fillText(`🛟 ${this.score} `, 40, 75);
+      this.ctx.fillText(`🛟 ${this.score} `, 850, 42);
     }
   
     updateCssFloat() {
         for (let i = 0; i < this.cssFloat.length; i++) {
-            this.cssFloat[i].y += 2;
+            this.cssFloat[i].y += 2.5;
             this.cssFloat[i].draw();
         }
 
-        if (this.frames % 750 === 0) { 
+        if (this.frames % 650 === 0) { 
 
             this.cssFloat.push(new CssFloat(this.ctx));
         }
@@ -80,11 +88,11 @@ class Game {
 
     updateHtmlFloat() {
         for (let i = 0; i < this.htmlFloat.length; i++) {
-            this.htmlFloat[i].y += 0.7;
+            this.htmlFloat[i].y += 1.7;
             this.htmlFloat[i].draw();
         }
 
-        if (this.frames % 800 === 0) { 
+        if (this.frames % 700 === 0) { 
 
             this.htmlFloat.push(new HtmlFloat(this.ctx));
         }
@@ -92,11 +100,11 @@ class Game {
 
     updateJsFloat() {
         for (let i = 0; i < this.jsFloat.length; i++) {
-            this.jsFloat[i].y += 2.4;
+            this.jsFloat[i].y += 2.8;
             this.jsFloat[i].draw();
         }
 
-        if (this.frames % 400 === 0) { 
+        if (this.frames % 300 === 0) { 
 
             this.jsFloat.push(new JsFloat(this.ctx));
         }
@@ -104,11 +112,11 @@ class Game {
 
     updateWrongFloat() {
         for (let i = 0; i < this.wrongFloat.length; i++) {
-            this.wrongFloat[i].y += 1.2;
+            this.wrongFloat[i].y += 3.2;
             this.wrongFloat[i].draw();
         }
 
-        if (this.frames % 900 === 0) { 
+        if (this.frames % 50 === 0) { 
 
             this.wrongFloat.push(new WrongFloat(this.ctx));
         }
@@ -131,13 +139,17 @@ class Game {
       } if (this.lifes === 0) {
         setTimeout(() => {
           this.stop();
+          this.audio2.pause();
+          this.audio.pause();
         }, 2000)
-        this.cssFloat.splice();
-        this.jsFloat.splice();
-        this.htmlFloat.splice();
-        this.wrongFloat.splice();
+        this.cssFloat = []
+        this.jsFloat = []
+        this.htmlFloat = []
+        this.wrongFloat = []
         this.plane2.draw();
+        this.audio.play();
         this.plane2.x -= 3.2;
+        this.audio3.play();
       }
     }
       checkScoreCSS = () => {
@@ -169,7 +181,7 @@ class Game {
       }
      }
    } 
-
+   
     }
    
     class Plane {
@@ -191,7 +203,7 @@ class Game {
     class Plane2 {
         constructor() {
             this.x = 800;
-            this.y = 50;
+            this.y = 100;
             this.w = 450;
             this.h = 100;
             this.ctx = ctx;
@@ -199,7 +211,7 @@ class Game {
             
         }
         draw() {
-            this.img6.src = "docs/assets/Avião_gameover.png"; 
+            this.img6.src = "docs/assets/sorry_catarina.png"; 
             this.ctx.drawImage(this.img6, this.x,this.y, this.w, this.h);
           }
         }
@@ -209,8 +221,8 @@ class Game {
         constructor(ctx) {
         this.x =  Math.floor(Math.random() * 1200);
         this.y = 0;
-        this.w = 90;
-        this.h = 140;
+        this.w = 70;
+        this.h = 100;
 
        
         this.ctx = ctx;
@@ -247,8 +259,8 @@ class Game {
         constructor(ctx) {
         this.x =  Math.floor(Math.random() * 1000);
         this.y = 0;
-        this.w = 90;
-        this.h = 140;
+        this.w = 70;
+        this.h = 100;
 
        
         this.ctx = ctx;
@@ -283,8 +295,8 @@ class Game {
         constructor(ctx) {
         this.x =  Math.floor(Math.random() * 1000);
         this.y = 0;
-        this.w = 90;
-        this.h = 140;
+        this.w = 70;
+        this.h = 100;
 
        
         this.ctx = ctx;
@@ -319,8 +331,8 @@ class Game {
         constructor(ctx) {
             this.x =  Math.floor(Math.random() * 1000);
             this.y = 0;
-            this.w = 90;
-            this.h = 140;
+            this.w = 70;
+            this.h = 100;
     
            
             this.ctx = ctx;
@@ -347,12 +359,8 @@ class Game {
           right() {
             return this.x + this.w;
           }
+           }
 
-        }
-
-    
-    
-      
 
 
 
