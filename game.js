@@ -72,7 +72,7 @@ class Game {
             this.cssFloat[i].draw();
         }
 
-        if (this.frames % 850 === 0) { 
+        if (this.frames % 750 === 0) { 
 
             this.cssFloat.push(new CssFloat(this.ctx));
         }
@@ -84,7 +84,7 @@ class Game {
             this.htmlFloat[i].draw();
         }
 
-        if (this.frames % 1000 === 0) { 
+        if (this.frames % 800 === 0) { 
 
             this.htmlFloat.push(new HtmlFloat(this.ctx));
         }
@@ -96,7 +96,7 @@ class Game {
             this.jsFloat[i].draw();
         }
 
-        if (this.frames % 700 === 0) { 
+        if (this.frames % 400 === 0) { 
 
             this.jsFloat.push(new JsFloat(this.ctx));
         }

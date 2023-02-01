@@ -26,14 +26,12 @@ class Component {
         this.ctx.drawImage(this.img, this.x,this.y, 100, 60);
         this.ctx.drawImage(this.img5,this.x,this.y, 100, 400);
         
-        /* this.ctx.fillStyle = "rgba(0,0,0,0)";
-        this.ctx.fillRect(this.x, this.y, this.w, this.h); */
     }
-
+    
     newPos() {
         this.x += this.speedX;
         this.y += this.speedY;
-        
+
     }
 
     top() {
