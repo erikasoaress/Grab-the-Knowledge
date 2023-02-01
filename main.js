@@ -7,7 +7,7 @@ const ctx = canvas.getContext("2d");
 
 const startButton = document.getElementById("start-button");
 const player = new Component(20, 500, 50, 120, ctx);
-const plane = new Plane(800, 15, 450, 350, ctx);
+const plane = new Plane(800, 15, 400, 350, ctx);
 const plane2 = new Plane(800,15,450,350,ctx);
 
 

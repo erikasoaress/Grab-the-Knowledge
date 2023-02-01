@@ -23,7 +23,7 @@ class Component {
 
     draw() {
 
-        this.ctx.drawImage(this.img, this.x,this.y, 100, 60);
+        this.ctx.drawImage(this.img, this.x,this.y, 90, 50);
         this.ctx.drawImage(this.img5,this.x,this.y, 100, 400);
         
         /* this.ctx.fillStyle = "rgba(0,0,0,0)";

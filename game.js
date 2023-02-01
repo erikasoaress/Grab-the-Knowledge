@@ -175,7 +175,7 @@ class Game {
     class Plane {
         constructor() {
             this.x = 800;
-            this.y = 50;
+            this.y = 100;
             this.w = 450;
             this.h = 100;
             this.ctx = ctx;
