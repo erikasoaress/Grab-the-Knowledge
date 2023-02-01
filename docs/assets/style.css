@@ -83,12 +83,13 @@ flex-flow: row;
 .button {
     justify-content: center;
     display:flex;
+   
 }
 
 .button-img {
     width: 150px;
     height: 100px;
-    object-fit: fill;
+    
   }  
 
   .float {
@@ -102,7 +103,8 @@ flex-flow: row;
     display: flex;
     justify-content: center;
     background-color: transparent;
-    border: none;   
+    border: transparent;   
+    text-decoration: none;
 }
 
 .arrow, .heart {
