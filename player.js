@@ -17,7 +17,7 @@ class Component {
     this.img5 = new Image();
     
 
-    this.img.src = "/docs/assets/player_position1.png";
+    this.img.src = "./docs/assets/player_position1.png";
   }
 
   draw() {

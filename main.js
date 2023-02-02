@@ -11,8 +11,8 @@ const plane2 = new Plane2(800, 15, 400, 350, ctx);
 
 startButton.onclick = function () {
   const game = new Game(ctx, 500, 700, player);
-  const audio = new Audio("docs/assets/helicopter-flyby-68121.mp3");
-  const audio3 = new Audio("/docs/assets/Game over music.wav");
+  const audio = new Audio("./docs/assets/helicopter-flyby-68121.mp3");
+  const audio3 = new Audio("./docs/assets/Game over music.wav");
   setTimeout(() => {
     audio.pause();
   }, 6000);

@@ -16,10 +16,10 @@ class Game {
     this.plane2 = plane2;
     this.score = 0;
     this.lifes = 5;
-    this.audio2 = new Audio("docs/assets/musicafundo.mp3");
-    this.audio = new Audio("docs/assets/helicopter-flyby-68121.mp3");
+    this.audio2 = new Audio("./docs/assets/musicafundo.mp3");
+    this.audio = new Audio("./docs/assets/helicopter-flyby-68121.mp3");
     this.audio2.loop = true;
-    this.audio3 = new Audio("/docs/assets/Game over music.wav");
+    this.audio3 = new Audio("./docs/assets/Game over music.wav");
   }
 
   start() {
@@ -184,7 +184,7 @@ class Plane {
     this.img5 = new Image();
   }
   draw() {
-    this.img5.src = "docs/assets/Avião_go.png";
+    this.img5.src = "./docs/assets/Avião_go.png";
     this.ctx.drawImage(this.img5, this.x, this.y, this.w, this.h);
   }
 }
@@ -199,7 +199,7 @@ class Plane2 {
     this.img6 = new Image();
   }
   draw() {
-    this.img6.src = "docs/assets/sorry_catarina.png";
+    this.img6.src = "./docs/assets/sorry_catarina.png";
     this.ctx.drawImage(this.img6, this.x, this.y, this.w, this.h);
   }
 }
@@ -217,7 +217,7 @@ class CssFloat {
   }
 
   draw() {
-    this.img1.src = "docs/assets/float_css.png";
+    this.img1.src = "./docs/assets/float_css.png";
     this.ctx.drawImage(this.img1, this.x, this.y, this.w, this.h);
   }
 
@@ -248,7 +248,7 @@ class HtmlFloat {
   }
 
   draw() {
-    this.img2.src = "docs/assets/float_html.png";
+    this.img2.src = "./docs/assets/float_html.png";
     this.ctx.drawImage(this.img2, this.x, this.y, this.w, this.h);
   }
 
@@ -279,7 +279,7 @@ class JsFloat {
   }
 
   draw() {
-    this.img3.src = "docs/assets/float_javascript.png";
+    this.img3.src = "./docs/assets/float_javascript.png";
     this.ctx.drawImage(this.img3, this.x, this.y, this.w, this.h);
   }
 
@@ -310,7 +310,7 @@ class WrongFloat {
   }
 
   draw() {
-    this.img4.src = "docs/assets/float.png";
+    this.img4.src = "./docs/assets/float.png";
     this.ctx.drawImage(this.img4, this.x, this.y, this.w, this.h);
   }
 
