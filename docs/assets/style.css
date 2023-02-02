@@ -1,158 +1,123 @@
-
 * {
-    margin:0;
-    text-align: center;
-}
-
-#canvas {
-    background-image: url(/docs/assets/game.png);
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin: 0;
+  text-align: center;
 }
 
 body {
-    background-color: lightblue;
-    text-align: center;
-    font-family: 'Changa','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
+  background-color: lightblue;
+  text-align: center;
+  font-family: "Changa", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+}
 
+#canvas {
+  background-image: url(/docs/assets/game.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .game-intro {
-    margin:10px 0 0 20px;
+  margin: 10px 0 0 20px;
 
-    width: 45vh;
-    height: 50vh;
+  width: 45vh;
+  height: 50vh;
 
-    flex-direction: column;
-    display: flex;
-    float: left;
+  flex-direction: column;
+  display: flex;
+  float: left;
 
-    border-radius: 5px;    
+  border-radius: 5px;
 }
 
-.game-intro h1 {
-    margin-top: 10px;
-    
+.grab {
+  flex-direction: row;
+  display: flex;
+  border: 0;
+  flex-flow: row;
 }
 
-.game-story {
-    margin-top: 2px;
-    margin-bottom: 10px;
-    padding: 10px;
-
-    border:dotted red 2px;
-    border-radius: 20px;
-    font-size: 14px;
-    
+.float {
+  width: 150px;
+  height: 120px;
+  object-fit: fill;
+  margin-bottom: 0;
 }
 
 h1 {
-    text-align: center;
-    height: 10vh;
-    justify-content: center;
-    padding: 30px;
-    line-height: 30px;
-    color:rgb(39, 39, 146);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+  margin-top: 10px;
+  padding: 30px;
 
+  
+  text-align: center;
+  height: 10vh;
+
+  line-height: 30px;
+  color: rgb(39, 39, 146);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
 }
 
-
-.grab {
-flex-direction: row;
-display:flex;
-border:0;
-flex-flow: row;
-
-
+.game-story {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: dotted red 3px;
+  border-radius: 20px;
+  font-size: 14px;
 }
-.points {
-    list-style: none;
-    margin-top: 10px;
-    margin-right: 30px;
-    margin-left: 30px;
-    border:dotted red 2px;
-    border-radius: 20px;
-    padding:10px;
-    display:flex;
-    font-size: 14px;
-   
-}
+
+.arrow,
 .heart {
-    margin-top: 10px;
-    
+  color: rgb(39, 39, 146);
+  font-weight: bold;
+  line-height: 30px;
+  margin-top: 0px;
+}
+
+.points {
+  display: flex;
+  list-style: none;
+  margin: 10px 30px;
+  padding: 10px;
+
+  border: dotted red 3px;
+  border-radius: 20px;
+
+  font-size: 14px;
 }
 
 .button {
-    justify-content: center;
-    display:flex;
-    
-   
+  align-content: center;
+  display: flex;
+}
+
+#start-button {
+  margin: 0 20px;
+  background-color: transparent;
+  border: transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+.img-reset {
+  height: 60px;
 }
 
 .button-img {
-    width: 150px;
-    height: 100px;
-    margin-bottom: 0px;
-    
-    
-  }  
-
-  .float {
-    width: 150px;
-    height: 120px;
-    object-fit: fill;
-    margin-bottom: 0;
-  }
-
-#start-button {
-    margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    border: transparent;   
-    text-decoration: none;
-    outline: none;
-    margin-bottom: 0px;
+  width: 150px;
+  height: 100px;
 }
-
-.arrow, .heart {
-    color: rgb(39, 39, 146);
-    font-weight: bold;
-    line-height: 30px;
-}
-
-
-/* h1 {
-   font-size: 40px;
-    text-align: center;
-    position: relative;
-} */
-
-/*p {
-    width: 50%;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-body button {
-    font-size: 30px;
-    background-color: red;
-    color: #fff;
-    padding: 20px 40px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-} */
-
 
 #game-board {
-    float: right;
-    padding: 10px;
-   
+  float: right;
+  padding: 10px;
 }
-  
-  
+
