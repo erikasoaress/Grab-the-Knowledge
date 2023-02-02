@@ -11,7 +11,7 @@ body {
 }
 
 #canvas {
-  background-image: url(./docs/assets/game.png);
+  background-image: url(/docs/assets/game.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
